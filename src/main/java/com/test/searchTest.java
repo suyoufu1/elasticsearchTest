@@ -329,4 +329,5 @@ public class searchTest {
         ExtendedStats extendedStats = response.getAggregations ().get ( "agg" );
         System.out.println ("最大值:"+extendedStats.getMaxAsString ()+",最小值："+extendedStats.getMinAsString ());
     }
+
 }
