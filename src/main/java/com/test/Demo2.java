@@ -39,7 +39,6 @@ public class Demo2 {
 
     ObjectMapper objectMapper = new ObjectMapper ();
     String index = "student";
-    String type = "man" ;
 
 
     /**

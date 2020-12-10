@@ -29,9 +29,9 @@ public class BatchAddData {
     @Test
     public void batchCreatDoc() throws IOException {
         ObjectMapper mapper = new ObjectMapper ();
-        Student student1 = new Student ("1", "ls" , 18L, new Date ());
+        Student student1 = new Student ("1", "syy" , 18L, new Date ());
         String json1 = mapper.writeValueAsString (student1);
-        Student student2 = new Student ("2", "ll" , 19L, new Date ());
+        Student student2 = new Student ("2", "syp" , 19L, new Date ());
         String json2 = mapper.writeValueAsString (student2);
         BulkRequest bulkRequest = new BulkRequest ();
         bulkRequest.add (new IndexRequest (index).source (json1, XContentType.JSON)).
