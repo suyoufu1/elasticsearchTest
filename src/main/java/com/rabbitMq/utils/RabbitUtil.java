@@ -1,5 +1,6 @@
 package com.rabbitMq.utils;
 
+import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
@@ -32,10 +33,14 @@ public class RabbitUtil {
 
    }
    // 关闭连接
-    public static void closeConnect(){
+    public static void closeConnect(Channel channel ,Connection connectionFactory){
         try {
-            Connection connection = factory.newConnection();
-            connection.close ();
+            if(channel != null) {
+                channel.close ();
+            }
+            if(connectionFactory != null){
+                connectionFactory.close ();
+            }
         }catch (Exception e){
             e.printStackTrace ();
         }

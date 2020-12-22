@@ -21,7 +21,7 @@ public class Send {
             String message = "Hello World!";
             channel.basicPublish ( "", QUEUE_HELLO, null, message.getBytes ( StandardCharsets.UTF_8 ) );
             System.out.println ( " [x] Sent '" + message + "'" );
-            RabbitUtil.closeConnect ();
+            RabbitUtil.closeConnect (channel,connectionFactory);
         }
 
     }
